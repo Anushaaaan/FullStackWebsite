@@ -6,7 +6,7 @@ const hbs = require("hbs");
 const { registerPartials } = require("hbs");
 
 const app = express();
-const port =process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
 //setting the path
 
@@ -19,8 +19,8 @@ app.use('/css', express.static(path.join(__dirname,"../node_modules/bootstrap/di
 app.use('/js', express.static(path.join(__dirname,"../node_modules/bootstrap/dist/js")));
 app.use('/jq', express.static(path.join(__dirname,"../node_modules/jquery/dist")));
 
-app.use(express.urlencoded({extended:false}))
-app.use(express.static(staticpath))
+app.use(express.urlencoded({extended:false})) // database me data bhjne ke lie
+app.use(express.static(staticpath))             // static website create krne ke lie and use static path dene ke lie
 app.set("view engine", "hbs");
 app.set("views", templatepath)
 hbs.registerPartials(partialpath)
